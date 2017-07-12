@@ -5,6 +5,7 @@
   "main": "index.js",
   "main:esnext": "index.es2015.js",
   "typings": "index.d.ts",
+  "browser": "index.browser.js",
   "scripts": {
     "prebuild": "npm run clean; tsc -d -t es6 -m es6 && mv ./index.js ./index.es6.js",
     "build": "npm run clean; tsc -d -t es2015 && mv ./index.js ./index.es2015.js && tsc -t es5",
@@ -59,6 +60,6 @@
     "lodash-es": "^4.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "tlvince-ngcomponent": "3.0.4"
+    "tlvince-ngcomponent": "3.0.7"
   }
 }

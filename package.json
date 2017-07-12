@@ -6,8 +6,10 @@
   "main:esnext": "index.es2015.js",
   "typings": "index.d.ts",
   "scripts": {
+    "prebuild": "npm run clean; tsc -d -t es6 -m es6 && mv ./index.js ./index.es6.js",
     "build": "npm run clean; tsc -d -t es2015 && mv ./index.js ./index.es2015.js && tsc -t es5",
     "clean": "rm ./*.d.ts; rm ./*.map; exit 0",
+    "postbuild": "rollup -c",
     "pretest": "npm run build",
     "prepublish": "npm test",
     "test": "karma start --single-run",
@@ -39,6 +41,10 @@
     "karma-source-map-support": "^1.2.0",
     "ngimport": "^0.6.1",
     "npm-run-all": "^4.0.2",
+    "rollup": "^0.45.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1",
     "rollupify": "^0.3.9",
     "tslint": "^5.1.0",
     "typescript": "^2.3.1",
@@ -46,13 +52,13 @@
   },
   "dependencies": {
     "@types/angular": "^1.6.16",
-    "@types/lodash.frompairs": "^4.0.2",
+    "@types/lodash-es": "^4.0.2",
     "@types/react": "^15.0.23",
     "@types/react-dom": "^15.5.0",
     "angular": ">=1.5.0",
-    "lodash.frompairs": "^4.0.1",
-    "ngcomponent": "^3.0.1",
+    "lodash-es": "^4.17.4",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "tlvince-ngcomponent": "3.0.4"
   }
 }

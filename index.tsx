@@ -1,6 +1,6 @@
 import { IAugmentedJQuery, IComponentOptions } from 'angular'
-import fromPairs = from 'lodash.frompairs'
-import NgComponent from 'ngcomponent'
+import fromPairs from 'lodash-es/fromPairs'
+import NgComponent from 'tlvince-ngcomponent'
 import * as React from 'react'
 import { render, unmountComponentAtNode } from 'react-dom'
 
